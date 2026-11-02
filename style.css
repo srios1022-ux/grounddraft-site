@@ -274,3 +274,6 @@ footer.site .brand img { width: 26px; height: 26px; border-radius: 7px; }
   .hero img { width: 64px; height: 64px; border-radius: 14px; }
 }
 .split .copy .kicker { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; margin: 0 0 8px; }
+.data-steps { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 960px) { .data-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .data-steps { grid-template-columns: 1fr; } }
