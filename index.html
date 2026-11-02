@@ -3,81 +3,291 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GroundDraft</title>
-<meta name="description" content="GroundDraft: document buried lines and equipment from your phone. Trace lines, drop pins, share one map with your crew, and export clean KMZ files. Works with no service.">
+<title>GroundDraft · Buried line and equipment mapping for field crews</title>
+<meta name="description" content="GroundDraft: document buried lines and equipment from your phone. Trace lines, drop pins, share one map with your crew and the office, and export clean KMZ files. Works with no service.">
+<meta name="theme-color" content="#06122a">
+<meta property="og:title" content="GroundDraft">
+<meta property="og:description" content="Document buried lines and equipment from your phone. One map for the crew, the office and your clients.">
+<meta property="og:image" content="https://grounddraft.app/img/icon-512.png">
+<meta property="og:url" content="https://grounddraft.app/">
 <link rel="icon" href="img/icon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.01"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="6" r="2.5"/><path d="M7.5 18H15a3.5 3.5 0 000-7H9a3.5 3.5 0 010-7h7.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.3-7-12a7 7 0 0114 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14a6.5 6.5 0 013.5 6"/></symbol>
+  <symbol id="i-offline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0120 0M5.5 12a10 10 0 0113 0M9 15.5a5 5 0 016 0"/><path d="M12 19.5v.01M3 3l18 18"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></symbol>
+</svg>
+
 <header class="site"><div class="wrap">
-  <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="30" height="30" style="border-radius:7px"><span>GroundDraft</span></a>
-  <nav><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="support.html">Support</a></nav>
+  <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="32" height="32"><span>GroundDraft</span></a>
+  <nav>
+    <a class="nav-hide" href="#how">How it works</a>
+    <a class="nav-hide" href="#pricing">Pricing</a>
+    <a class="nav-hide" href="#faq">FAQ</a>
+    <a class="nav-hide" href="#contact">Contact</a>
+    <a class="nav-cta" href="https://app.grounddraft.app/">Open app</a>
+  </nav>
 </div></header>
 
-<main class="wrap">
-  <section class="hero product">
-    <img src="img/icon-512.png" alt="GroundDraft app icon" width="120" height="120">
+<section class="hero-band">
+  <div class="wrap hero-grid">
     <div>
-      <h1>Document buried lines and equipment from your phone.</h1>
-      <p class="lead">Trace a line by walking it, drop pins on valves, wells and tanks, and share one live map with
-      your crew and the office. Import the company's KMZ, mark what you find, and hand back a clean file.
-      Works with no cell service.</p>
+      <span class="eyebrow">Built for oil and gas field crews</span>
+      <h1>Every buried line, <em>documented once</em> and shared with the whole crew.</h1>
+      <p class="lead">Walk a line to trace it, drop pins on valves, wells and tanks, and record size, pressure and
+        depth on the spot. Your crew, your office and your clients all work from the same map.</p>
       <div class="cta">
-        <a class="button primary" href="https://app.grounddraft.app/">Open the web app</a>
-        <a class="button" href="#get">Get GroundDraft</a>
+        <a class="button primary" href="https://app.grounddraft.app/">Start your free 7-day trial</a>
+        <a class="button ghost" href="#how">See how it works</a>
       </div>
+      <ul class="hero-points">
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>No card needed to try</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>Works with no cell service</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>KMZ in, KMZ out</li>
+      </ul>
     </div>
-  </section>
-
-  <div class="note"><b>A documentation tool.</b> GroundDraft records what you and your crew mark. It does not locate
-  or verify buried facilities, and locations are approximate. <b>Always call 811 before digging.</b></div>
-
-  <h2 id="features">Built for field crews</h2>
-  <div class="features">
-    <div class="feature"><h3>Walk it or mark the bends</h3><p>Trace a line with GPS as you walk, or stand at each bend
-      and tap. Wobble is straightened automatically, and a pro GPS receiver can be used for tighter accuracy.</p></div>
-    <div class="feature"><h3>Pins for the equipment</h3><p>Block valves, drips, risers, meters, wells, tanks, pumping
-      units, compressors, panels and more, with their own fields like size, pressure rating and install date.</p></div>
-    <div class="feature"><h3>Your KMZ, your way</h3><p>Open KMZ, KML, GeoJSON, GPX, CSV and shapefiles of any size.
-      Folders, colors, icons and names come through like Google Earth, and every change exports back cleanly.</p></div>
-    <div class="feature"><h3>One map for the whole crew</h3><p>Crew members join with a company code, admins approve
-      them, and everyone's work syncs to one map. Clients can get view-only access to the jobs you choose.</p></div>
-    <div class="feature"><h3>No service? No problem</h3><p>Jobs, lines and pins live on the phone and sync when you're
-      back in coverage. Save the map for a site before heading out.</p></div>
-    <div class="feature"><h3>Office ready</h3><p>Open the same jobs on any computer, clean up imported files, show and
-      hide folders, review history, and export for Google Earth, ArcGIS, QGIS, Excel or handheld GPS.</p></div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="phone back"><img src="img/shot-details.jpg" alt="" width="632" height="1368"></div>
+      <div class="phone front"><img src="img/shot-map.jpg" alt="" width="632" height="1368"></div>
+    </div>
   </div>
+</section>
 
-  <h2 id="pricing">Pricing</h2>
-  <p>Every plan starts with a <b>free 7-day trial</b>. Clients you share jobs with are always free.</p>
-  <div class="plans">
-    <div class="plan"><h3>Solo</h3><p class="price">$20<span>/month</span></p><p>One person, one device. Your own jobs, backed up.</p></div>
-    <div class="plan"><h3>Crew</h3><p class="price">$199<span>/month</span></p><p>Up to 5 people on one shared company map.</p></div>
-    <div class="plan"><h3>Team</h3><p class="price">$349<span>/month</span></p><p>6 to 10 people.</p></div>
-    <div class="plan"><h3>Division</h3><p class="price">$599<span>/month</span></p><p>11 to 20 people.</p></div>
-    <div class="plan"><h3>Enterprise</h3><p class="price">Let's talk</p><p>More than 20 people, or special needs.
-      <a href="mailto:support@rrdigital.app?subject=GroundDraft%20Enterprise">Contact us</a>.</p></div>
+<div class="wrap safety-row">
+  <div class="safety"><svg width="20" height="20"><use href="#i-warn"/></svg>
+    <div><b>A documentation tool.</b> GroundDraft records what you and your crew mark. It does not locate or verify
+    buried facilities, and locations are approximate. <b>Always call 811 before digging.</b></div></div>
+</div>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">How it works</p>
+      <h2>From the field to the office in three steps</h2>
+      <p>No GIS training needed. If your crew can use a phone, they can map a line.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Start a job or bring your KMZ</h3>
+        <p>Create a job for a lease, gathering system or project, or open the company's KMZ, KML, GeoJSON, GPX,
+        CSV or shapefile. Folders, colors and icons come through like Google Earth.</p></div>
+      <div class="step"><h3>Mark it in the field</h3>
+        <p>Walk the line with GPS or tap at each bend. Drop pins on block valves, drips, risers, meters and wells,
+        and fill in size, material, MAOP, depth and install date while you're standing on it.</p></div>
+      <div class="step"><h3>Share it and hand it back</h3>
+        <p>Everything syncs to one company map when you're back in coverage. Export a clean KMZ, GeoJSON, CSV or
+        Excel file for the office, GIS or your client.</p></div>
+    </div>
   </div>
-  <p class="meta">If a plan ends, nothing is deleted: jobs stay viewable and exportable.</p>
+</section>
 
-  <h2 id="get">Get GroundDraft</h2>
-  <div class="features">
-    <div class="feature"><h3>iPhone</h3><p>Coming soon to the App Store.</p></div>
-    <div class="feature"><h3>Windows and Mac</h3><p>Open <a href="https://app.grounddraft.app/">app.grounddraft.app</a> in
-      Chrome or Edge and choose <b>Install GroundDraft</b> for a desktop icon and its own window. Updates install themselves.</p></div>
-    <div class="feature"><h3>Android</h3><p>Open <a href="https://app.grounddraft.app/">app.grounddraft.app</a> in Chrome and
-      tap <b>Install app</b>. A Google Play version is on the way.</p></div>
+<section class="block alt" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2>Everything a field crew needs. Nothing it doesn't.</h2>
+      <p>Built from real time spent on leases and right-of-ways, around the problems crews actually run into.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-route"/></svg></div>
+        <h3>Walk it or mark the bends</h3><p>Trace with GPS as you walk, or stand at each bend and tap. Wobble is
+        straightened automatically, and a pro RTK receiver can be used for tighter accuracy.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-pin"/></svg></div>
+        <h3>Pins for the equipment</h3><p>Block valves, drips, risers, meters, wells, tanks, pumping units,
+        compressors and panels, each with the fields that matter for it.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-file"/></svg></div>
+        <h3>Pipe details that stick</h3><p>Size, pipe type, rated pressure (MAOP), operating pressure, wall,
+        grade, coating, product, depth, owner and 811 ticket, kept with the line and in every export.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-layers"/></svg></div>
+        <h3>Your KMZ, your way</h3><p>Big files from the office open fast. Turn folders on and off like Google
+        Earth, and let cleanup find duplicates, unnamed items and lines that should be joined.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-offline"/></svg></div>
+        <h3>No service? No problem</h3><p>Jobs, lines and pins live on the phone and sync when you're back in
+        coverage. Save the map for a site before you head out.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-lock"/></svg></div>
+        <h3>Your data stays yours</h3><p>Admins approve who joins, lock finished jobs and see who changed what.
+        Export everything at any time. Nothing is deleted if a plan ends.</p></div>
+    </div>
   </div>
+</section>
 
-  <h2>Questions?</h2>
-  <p>Email <a href="mailto:support@rrdigital.app">support@rrdigital.app</a> or see <a href="support.html">Support</a>.
-  We usually reply within one business day.</p>
-</main>
+<section class="block">
+  <div class="wrap split flip">
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>app.grounddraft.app</span></div>
+      <img src="img/shot-desktop.jpg" alt="GroundDraft on a computer, showing a gathering system map with folders turned on and off" width="1389" height="868" loading="lazy">
+    </div>
+    <div class="copy">
+      <p class="kicker">Phone, computer, tablet</p>
+      <h2>The office sees what the field marked, the same day.</h2>
+      <p>Open the same jobs on any computer in Chrome or Edge, or install it for its own window and desktop icon.
+        Review the crew's work, clean up imported files and export for the people who need it.</p>
+      <ul class="checks">
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>Exports for Google Earth, ArcGIS, QGIS, Excel and handheld GPS</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>Keyboard shortcuts and mouse drawing on the big screen</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>Updates install themselves. Nothing for IT to manage.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">For your whole operation</p>
+      <h2>One map. Everyone on the same page.</h2>
+    </div>
+    <div class="roles">
+      <div class="role"><span class="tag">Field crews</span><h3>Mark it once, right the first time</h3>
+        <p>Big, simple buttons and offline maps. Crew members join with a company code and an
+        admin approves them.</p></div>
+      <div class="role"><span class="tag">Office and supervisors</span><h3>Know what's in the ground</h3>
+        <p>See every job in one place, who marked what and when, and lock finished jobs so records stay put.</p></div>
+      <div class="role"><span class="tag">Clients and partners</span><h3>Share without the email chain</h3>
+        <p>Give clients view-only access to just the jobs you choose. They can view and export. Client seats are
+        always free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">Pricing</p>
+      <h2>Simple plans that grow with your crew</h2>
+      <p>Every plan starts with a free 7-day trial. No card needed to try it.</p>
+    </div>
+    <div class="plans">
+      <div class="plan"><h3>Solo</h3><p class="who">For one person</p>
+        <p class="price">$20<span>/mo</span></p><p class="per">&nbsp;</p>
+        <ul>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Unlimited jobs, lines and pins</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Import and export KMZ, KML, CSV and more</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Works offline, backed up to the cloud</li>
+        </ul>
+        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+      <div class="plan popular"><span class="badge">Most popular</span><h3>Crew</h3><p class="who">Up to 5 people</p>
+        <p class="price">$199<span>/mo</span></p><p class="per">About $40 per person</p>
+        <ul>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Everything in Solo</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>One shared company map</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Admin approval, roles and job locking</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Free view-only client access</li>
+        </ul>
+        <a class="button primary block" href="https://app.grounddraft.app/">Start free trial</a></div>
+      <div class="plan"><h3>Team</h3><p class="who">6 to 10 people</p>
+        <p class="price">$349<span>/mo</span></p><p class="per">About $35 per person</p>
+        <ul>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Everything in Crew</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Room for multiple crews</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Help setting up your line types and fields</li>
+        </ul>
+        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+      <div class="plan"><h3>Division</h3><p class="who">11 to 20 people</p>
+        <p class="price">$599<span>/mo</span></p><p class="per">About $30 per person</p>
+        <ul>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Everything in Team</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Priority email support</li>
+          <li><svg width="14" height="14"><use href="#i-check"/></svg>Help bringing in your existing KMZ files</li>
+        </ul>
+        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+    </div>
+    <div class="enterprise">
+      <div><h3>Enterprise</h3><p>More than 20 people, several divisions, or special requirements? We'll build a plan around your company.</p></div>
+      <a class="button" href="mailto:support@grounddraft.app?subject=GroundDraft%20Enterprise">Talk to us</a>
+    </div>
+    <p class="fine">If a plan ends, nothing is deleted. Jobs stay viewable and exportable.</p>
+  </div>
+</section>
+
+<section class="block alt" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Made to fit your company</p>
+      <h2>Tell us how your crews work. We'll make it fit.</h2>
+      <p>Your line types and colors, the equipment and fields you track, your folder layout, and the files your
+        office and GIS team need back.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-sparkle"/></svg></div>
+        <h3>Tell us what you need</h3><p>Email <a href="mailto:support@grounddraft.app?subject=GroundDraft%20for%20our%20company">support@grounddraft.app</a>
+        with what your crews map, what you track, and how you share it. We'll set it up with you.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-file"/></svg></div>
+        <h3>A file won't import?</h3><p>KMZ, GIS export or spreadsheet giving you trouble? Send it to
+        <a href="mailto:support@grounddraft.app?subject=File%20won%27t%20import">support@grounddraft.app</a>
+        with what you expected to see. We'll get it working.</p></div>
+      <div class="feature"><div class="ic"><svg width="22" height="22"><use href="#i-users"/></svg></div>
+        <h3>Something not right?</h3><p>Found a bug, or something slowing your crew down? Email
+        <a href="mailto:support@grounddraft.app?subject=GroundDraft%20feedback">support@grounddraft.app</a>.
+        Field feedback is how GroundDraft gets better.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">FAQ</p>
+      <h2>Questions crews and managers ask</h2>
+    </div>
+    <div class="faq">
+      <details><summary>How accurate are the locations?</summary>
+        <p>Phone GPS is usually within about 10 to 16 feet in open sky, and less accurate near buildings, trees or
+        equipment. A professional RTK receiver can get within inches when it's set up correctly. Every point keeps
+        its accuracy reading, so you always know how good a mark is. GroundDraft is a documentation tool: it does not
+        locate or verify buried facilities, and you should always call 811 before digging.</p></details>
+      <details><summary>Does it work without cell service?</summary>
+        <p>Yes. Jobs, lines and pins are saved on the device and sync when you're back in coverage. Save the map
+        for an area before you head out and the background imagery is there too.</p></details>
+      <details><summary>Can I bring in the KMZ files we already have?</summary>
+        <p>Yes. GroundDraft opens KMZ, KML, GeoJSON, GPX, CSV and shapefiles, keeps their folders, colors, icons
+        and names, and exports back to the same formats. If a file gives you trouble, email it to us and we'll get
+        it working.</p></details>
+      <details><summary>Who owns the data?</summary>
+        <p>You and your company do. You can export every job at any time. We don't sell your data, and if a plan
+        ends nothing is deleted: jobs stay viewable and exportable. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+      <details><summary>What devices does it run on?</summary>
+        <p>iPhone (App Store version coming soon), plus any computer, tablet or Android phone through
+        <a href="https://app.grounddraft.app/">app.grounddraft.app</a>, which you can install for its own icon
+        and window.</p></details>
+      <details><summary>How does the free trial work? Can I cancel?</summary>
+        <p>Every new account gets 7 days free, with no card needed to start. Plans are month to month, so you can
+        cancel at any time. Clients you share jobs with never need a plan.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Put your lines on the map this week.</h2>
+    <p>Try GroundDraft free for 7 days with your own crew and your own files.</p>
+    <div class="cta">
+      <a class="button primary" href="https://app.grounddraft.app/">Start your free trial</a>
+      <a class="button ghost" href="mailto:support@grounddraft.app?subject=GroundDraft%20demo">Ask for a demo</a>
+    </div>
+  </div>
+</section>
 
 <footer class="site"><div class="wrap">
-  <a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a>
-  GroundDraft is made by <a href="https://rrdigital.app/">RR Digital</a> · © 2026
+  <a class="brand" href="index.html"><img src="img/icon.png" alt="" width="26" height="26"><span>GroundDraft</span></a>
+  <div class="links">
+    <a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a>
+    <a href="mailto:support@grounddraft.app">support@grounddraft.app</a>
+  </div>
+  <div>Made by <a href="https://rrdigital.app/">RR Digital</a> · © 2026</div>
 </div></footer>
 </body>
 </html>
