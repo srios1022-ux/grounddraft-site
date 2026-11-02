@@ -277,3 +277,12 @@ footer.site .brand img { width: 26px; height: 26px; border-radius: 7px; }
 .data-steps { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 960px) { .data-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .data-steps { grid-template-columns: 1fr; } }
+
+/* guide tables */
+.table-wrap { overflow-x: auto; margin: 10px 0; }
+.roles-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.roles-table th, .roles-table td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.roles-table th { font-size: 13px; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+.roles-table td:last-child { white-space: nowrap; }
+main.narrow ol li, main.narrow ul li { margin: 6px 0; }
+.plan .billnote { font-size: 13px; color: var(--muted); margin: -10px 0 16px; }
