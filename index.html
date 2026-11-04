@@ -39,7 +39,7 @@
     <a class="nav-hide" href="#pricing">Pricing</a>
     <a class="nav-hide" href="#faq">FAQ</a>
     <a class="nav-hide" href="#contact">Contact</a>
-    <a class="nav-cta" href="https://app.grounddraft.app/">Open app</a>
+    <a class="nav-cta" data-cta="top bar" href="https://app.grounddraft.app/">Open app</a>
   </nav>
 </div></header>
 
@@ -51,7 +51,7 @@
       <p class="lead">Walk a line to trace it, drop pins on valves, wells and tanks, and record size, pressure and
         depth on the spot. Your crew, your office and your clients all work from the same map.</p>
       <div class="cta">
-        <a class="button primary" href="https://app.grounddraft.app/">Start your free 7-day trial</a>
+        <a class="button primary" data-cta="top of page" href="https://app.grounddraft.app/">Start your free 7-day trial</a>
         <a class="button ghost" href="#how">See how it works</a>
       </div>
       <ul class="hero-points">
@@ -202,7 +202,7 @@
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Import and export KMZ, KML, CSV and more</li>
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Works offline, backed up to the cloud</li>
         </ul>
-        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+        <a class="button block" data-cta="Solo plan" href="https://app.grounddraft.app/">Start free trial</a></div>
       <div class="plan popular"><span class="badge">Most popular</span><h3>Crew</h3><p class="who">Up to 5 people</p>
         <p class="price">$199<span>/mo</span></p><p class="per">About $40 per person</p>
         <ul>
@@ -211,7 +211,7 @@
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Admin approval, roles and job locking</li>
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Free view-only client access</li>
         </ul>
-        <a class="button primary block" href="https://app.grounddraft.app/">Start free trial</a></div>
+        <a class="button primary block" data-cta="Crew plan" href="https://app.grounddraft.app/">Start free trial</a></div>
       <div class="plan"><h3>Team</h3><p class="who">6 to 10 people</p>
         <p class="price">$349<span>/mo</span></p><p class="per">About $35 per person</p>
         <ul>
@@ -219,7 +219,7 @@
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Room for multiple crews</li>
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Help setting up your line types and fields</li>
         </ul>
-        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+        <a class="button block" data-cta="Team plan" href="https://app.grounddraft.app/">Start free trial</a></div>
       <div class="plan"><h3>Division</h3><p class="who">11 to 20 people</p>
         <p class="price">$599<span>/mo</span></p><p class="per">About $30 per person</p>
         <ul>
@@ -227,7 +227,7 @@
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Priority email support</li>
           <li><svg width="14" height="14"><use href="#i-check"/></svg>Help bringing in your existing KMZ files</li>
         </ul>
-        <a class="button block" href="https://app.grounddraft.app/">Start free trial</a></div>
+        <a class="button block" data-cta="Division plan" href="https://app.grounddraft.app/">Start free trial</a></div>
     </div>
     <div class="enterprise">
       <div><h3>Enterprise</h3><p>More than 20 people, several divisions, or special requirements? We'll build a plan around your company.</p></div>
@@ -302,7 +302,7 @@
     <h2>Put your lines on the map this week.</h2>
     <p>Try GroundDraft free for 7 days with your own crew and your own files.</p>
     <div class="cta">
-      <a class="button primary" href="https://app.grounddraft.app/">Start your free trial</a>
+      <a class="button primary" data-cta="bottom of page" href="https://app.grounddraft.app/">Start your free trial</a>
       <a class="button ghost" href="mailto:support@grounddraft.app?subject=GroundDraft%20demo">Ask for a demo</a>
     </div>
   </div>
@@ -316,6 +316,16 @@
   </div>
   <div>Made by <a href="https://rrdigital.app/">RR Digital</a> · © 2026</div>
 </div></footer>
+<!-- Counts taps on the trial buttons, with no cookies and nothing about who tapped -->
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-cta]');
+  if (!a || !navigator.sendBeacon) return;
+  var source = new URLSearchParams(location.search).get('utm_source') || '';
+  navigator.sendBeacon('https://wbzfvgzzdwdvgbkfggzn.supabase.co/functions/v1/account-events',
+    JSON.stringify({ action: 'click', where: a.dataset.cta, source: source }));
+});
+</script>
 <!-- Cloudflare Web Analytics: counts visits without cookies --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ceca91ece9524c42bbc29e8f4c7ce8b6"}'></script>
 </body>
 </html>
