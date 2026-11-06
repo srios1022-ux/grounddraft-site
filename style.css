@@ -242,6 +242,12 @@ footer.site a:hover { color: #fff; }
 footer.site .brand { font-size: 16px; }
 footer.site .brand img { width: 26px; height: 26px; border-radius: 7px; }
 
+/* Between the phone layout and full width the two hero phones don't fit beside the headline */
+@media (min-width: 961px) and (max-width: 1300px) {
+  .phone.back { display: none; }
+  .phone.front { right: 50%; transform: translateX(50%); }
+}
+
 /* ---------- small screens ---------- */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 56px; }
