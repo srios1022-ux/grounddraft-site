@@ -1,0 +1,29 @@
+# Checks every 10 minutes that the website, the web app and the sign-up/billing services answer.
+# If any of them is down, this run fails and GitHub emails the repository owner.
+name: Uptime check
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check sites and services
+        run: |
+          fail=0
+          check() {  # name, method, url
+            for try in 1 2 3; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' -X "$2" --max-time 20 "$3")
+              [ "$code" = "200" ] && { echo "OK    $1 ($code)"; return; }
+              sleep 20
+            done
+            echo "::error::DOWN  $1 answered $code: $3"; fail=1
+          }
+          check "Website"        GET     https://grounddraft.app/
+          check "Web app"        GET     https://app.grounddraft.app/
+          check "Sign-up emails" OPTIONS https://wbzfvgzzdwdvgbkfggzn.supabase.co/functions/v1/account-events
+          check "Billing"        OPTIONS https://wbzfvgzzdwdvgbkfggzn.supabase.co/functions/v1/billing
+          exit $fail
