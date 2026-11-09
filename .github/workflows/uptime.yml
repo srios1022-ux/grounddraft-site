@@ -1,9 +1,9 @@
-# Checks every 10 minutes that the website, the web app and the sign-up/billing services answer.
+# Checks every 30 minutes that the website, the web app and the sign-up/billing services answer.
 # If any of them is down, this run fails and GitHub emails the repository owner.
 name: Uptime check
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 permissions: {}
 jobs:

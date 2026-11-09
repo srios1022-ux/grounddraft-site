@@ -1,0 +1,16 @@
+name = "grounddraft-site"
+compatibility_date = "2026-11-01"
+main = "worker.js"
+workers_dev = false
+preview_urls = false
+routes = [
+  { pattern = "grounddraft.app/*", zone_name = "grounddraft.app" },
+  { pattern = "www.grounddraft.app/*", zone_name = "grounddraft.app" },
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+html_handling = "none"
+not_found_handling = "none"
