@@ -294,3 +294,21 @@ footer.site .brand img { width: 26px; height: 26px; border-radius: 7px; }
 .roles-table td:last-child { white-space: nowrap; }
 main.narrow ol li, main.narrow ul li { margin: 6px 0; }
 .plan .billnote { font-size: 13px; color: var(--muted); margin: -10px 0 16px; }
+
+/* Free demo request */
+.demo-band { background: var(--panel); border-bottom: 1px solid var(--line); }
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.demo-points { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; color: var(--text); font-weight: 600; }
+.demo-points li { display: flex; gap: 10px; align-items: center; }
+.demo-points svg { color: var(--accent); flex: none; }
+.demo-form { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); display: grid; gap: 14px; }
+.demo-form label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+.demo-form input, .demo-form select { font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--text); }
+.demo-form .demo-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.demo-msg { margin: 0; font-size: 14px; text-align: center; }
+.demo-msg:empty { display: none; }
+.demo-msg.err { color: #c62828; }
+.demo-fine { margin: 0; color: var(--muted); font-size: 14px; text-align: center; }
+.demo-done h3 { margin: 0 0 8px; font-size: 22px; }
+.demo-done p { margin: 0; color: var(--muted); }
+@media (max-width: 860px) { .demo-grid { grid-template-columns: 1fr; gap: 24px; } }

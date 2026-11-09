@@ -51,15 +51,14 @@
       <p class="lead">Walk a line to trace it, drop pins on valves, wells and tanks, and record size, pressure and
         depth on the spot. Your crew, your office and your clients all work from the same map.</p>
       <div class="cta">
-        <a class="button primary" data-cta="top of page" href="https://app.grounddraft.app/">Start your free 7-day trial</a>
-        <a class="button ghost" href="#how">See how it works</a>
+        <a class="button primary" href="#demo">Get a free demo</a>
+        <a class="button ghost" data-cta="top of page" href="https://app.grounddraft.app/">Start 7-day free trial</a>
       </div>
       <ul class="hero-points">
-        <li><svg width="16" height="16"><use href="#i-check"/></svg>Nothing charged until day 8</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>Demo is free, no card, no account</li>
         <li><svg width="16" height="16"><use href="#i-check"/></svg>Works with no cell service</li>
         <li><svg width="16" height="16"><use href="#i-check"/></svg>KMZ in, KMZ out</li>
       </ul>
-      <p class="hero-demo">Want someone to walk you through it? <a href="mailto:support@grounddraft.app?subject=GroundDraft%20demo">Ask for a demo</a></p>
     </div>
     <div class="hero-art" aria-hidden="true">
       <div class="phone back"><img src="img/shot-details.jpg" alt="" width="632" height="1368"></div>
@@ -73,6 +72,32 @@
     <div><b>A documentation tool.</b> GroundDraft records what you and your crew mark. It does not locate or verify
     buried facilities, and locations are approximate. <b>Always call 811 before digging.</b></div></div>
 </div>
+
+<section class="block demo-band" id="demo">
+  <div class="wrap demo-grid">
+    <div class="section-head">
+      <p class="kicker">Free demo</p>
+      <h2>See your own lines on the map, free.</h2>
+      <p>Leave your email and we'll take it from there by email: a short video of GroundDraft on your own lines (or a sample field), then help uploading your KMZ files and setting up your account.</p>
+      <ul class="demo-points">
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>No card, no call, no pressure</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>We help you upload your files and set up your account</li>
+        <li><svg width="16" height="16"><use href="#i-check"/></svg>All by email, within one business day</li>
+      </ul>
+    </div>
+    <form class="demo-form" id="demo-form">
+      <label>Your name<input name="name" autocomplete="name" placeholder="First and last name" maxlength="80"></label>
+      <label>Company<input name="company" autocomplete="organization" placeholder="Company or crew name" maxlength="80"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" maxlength="120" required></label>
+      <label>How many people would use it?
+        <select name="size"><option>Just me</option><option>2 to 5</option><option>6 to 15</option><option>16 or more</option></select></label>
+      <label class="demo-hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="button primary block" type="submit">Request my free demo</button>
+      <p class="demo-msg" role="status"></p>
+      <p class="demo-fine">Only used to set up your demo. Ready now? <a data-cta="demo form" href="https://app.grounddraft.app/">Start the 7-day trial</a>.</p>
+    </form>
+  </div>
+</section>
 
 <section class="block" id="how">
   <div class="wrap">
@@ -326,6 +351,32 @@ document.addEventListener('click', function (e) {
   navigator.sendBeacon('https://wbzfvgzzdwdvgbkfggzn.supabase.co/functions/v1/account-events',
     JSON.stringify({ action: 'click', where: a.dataset.cta, source: source }));
 });
+</script>
+<!-- Demo request: sends the form to support@grounddraft.app -->
+<script>
+(function () {
+  var f = document.getElementById('demo-form');
+  if (!f) return;
+  var msg = f.querySelector('.demo-msg'), btn = f.querySelector('button');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = Object.fromEntries(new FormData(f));
+    d.action = 'demo';
+    d.source = new URLSearchParams(location.search).get('utm_source') || '';
+    btn.disabled = true; btn.textContent = 'Sending...'; msg.textContent = ''; msg.className = 'demo-msg';
+    fetch('https://wbzfvgzzdwdvgbkfggzn.supabase.co/functions/v1/account-events', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d)
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'failed'); }); })
+      .then(function () {
+        f.innerHTML = '<div class="demo-done"><h3>Thanks, you’re on the list.</h3><p>We’ll email you within one business day. Have KMZ files? Reply with them and we’ll help you get set up. Check your spam folder for support@grounddraft.app.</p></div>';
+      })
+      .catch(function (err) {
+        btn.disabled = false; btn.textContent = 'Request my free demo'; msg.className = 'demo-msg err';
+        msg.innerHTML = (err.message && err.message !== 'failed' ? err.message : 'That didn’t go through.') +
+          ' You can also email <a href="mailto:support@grounddraft.app?subject=GroundDraft%20demo">support@grounddraft.app</a>.';
+      });
+  });
+})();
 </script>
 <!-- Cloudflare Web Analytics: counts visits without cookies --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ceca91ece9524c42bbc29e8f4c7ce8b6"}'></script>
 </body>
